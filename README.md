@@ -1,75 +1,84 @@
-API de Agenda
-Este é um projeto de API em Python usando o Django Rest Framework para armazenar informações de horários para agendar quadras de vôlei em uma arena.
+<h1>API de Agenda</h1>
 
-As bibliotecas utilizadas são:
+Status: Developing ⚠️
 
-asgiref==3.6.0
-Django==4.1.7
-djangorestframework==3.14.0
-Markdown==3.4.1
-pytz==2022.7.1
-sqlparse==0.4.3
-tzdata==2022.7
-A API possui as seguintes rotas:
+### API created to store information about schedules, courts, locations, payments, and so on...
 
-GET /company/ - retorna todas as empresas cadastradas
-POST /company/ - cria uma nova empresa
-GET /company/:id - retorna uma empresa específica
-PUT /company/:id - atualiza uma empresa específica
-DELETE /company/:id - deleta uma empresa específica
-GET /customer/ - retorna todos os clientes cadastrados
-POST /customer/ - cria um novo cliente
-GET /customer/:id - retorna um cliente específico
-PUT /customer/:id - atualiza um cliente específico
-DELETE /customer/:id - deleta um cliente específico
-GET /place/ - retorna todas as quadras/campos disponíveis
-POST /place/ - cria uma nova quadra/campo
-GET /place/:id - retorna uma quadra/campo específica
-PUT /place/:id - atualiza uma quadra/campo específica
-DELETE /place/:id - deleta uma quadra/campo específica
-GET /payment/ - retorna todos os tipos de pagamento cadastrados
-POST /payment/ - cria um novo tipo de pagamento
-GET /payment/:id - retorna um tipo de pagamento específico
-PUT /payment/:id - atualiza um tipo de pagamento específico
-DELETE /payment/:id - deleta um tipo de pagamento específico
-GET /scheduling/ - retorna todos os horários agendados
-POST /scheduling/ - cria um novo agendamento
-GET /scheduling/:id - retorna um agendamento específico
-PUT /scheduling/:id - atualiza um agendamento específico
-DELETE /scheduling/:id - deleta um agendamento específico
-GET /customer/:id/horarios - retorna todos os horários agendados por um cliente específico
-Para cada recurso, a API suporta as operações CRUD (Create, Read, Update e Delete). Além disso, há uma rota para listar os horários agendados por um cliente específico.
+## The libraries used are:
 
-As models utilizadas são:
++ asgiref==3.6.0
++ Django==4.1.7
++ djangorestframework==3.14.0
++ Markdown==3.4.1
++ pytz==2022.7.1
++ sqlparse==0.4.3
++ tzdata==2022.7
 
-Company: representa o local onde estão as quadras/campos
-Customer: representa os clientes que agendam horários
-Place: representa cada quadra/campo disponível em cada local
-Payment: representa as formas de pagamento aceitas para cada agendamento
-Scheduling: representa cada agendamento de horário para uma quadra/campo específica por um cliente específico.
-Os serializers utilizados são:
+## The API has the following routes:
 
-CompanySerializer: serializa/desserializa objetos Company
-CustomerSerializer: serializa/desserializa objetos Customer
-PlaceSerializer: serializa/desserializa objetos Place
-PaymentSerializer: serializa/ desserializa objetos Payment
-SchedulingSerializer: serializa/desserializa objetos Scheduling
-HorariosClientesSerializer: serializa/desserializa
++ GET /company/ - returns all registered companies
++ POST /company/ - creates a new company
++ GET /company/:id - returns a specific company
++ PUT /company/:id - updates a specific company
++ DELETE /company/:id - deletes a specific company
++ GET /customer/ - returns all registered customers
++ POST /customer/ - creates a new customer
++ GET /customer/:id - returns a specific customer
++ PUT /customer/:id - updates a specific customer
++ DELETE /customer/:id - deletes a specific customer
++ GET /place/ - returns all available courts/fields
++ POST /place/ - creates a new court/field
++ GET /place/:id - returns a specific court/field
++ PUT /place/:id - updates a specific court/field
++ DELETE /place/:id - deletes a specific court/field
++ GET /payment/ - returns all registered payment types
++ POST /payment/ - creates a new payment type
++ GET /payment/:id - returns a specific payment type
++ PUT /payment/:id - updates a specific payment type
++ DELETE /payment/:id - deletes a specific payment type
++ GET /scheduling/ - returns all scheduled times
++ POST /scheduling/ - creates a new scheduling
++ GET /scheduling/:id - returns a specific scheduling
++ PUT /scheduling/:id - updates a specific scheduling
++ DELETE /scheduling/:id - deletes a specific scheduling
++ GET /customer/:id/horarios - returns all scheduled times for a specific customer
+For each resource, the API supports CRUD operations (Create, Read, Update, and Delete). In addition, there is a route to list the scheduled times for a specific customer.
+
+## The models used are:
+
++ Company: represents the location where the courts/fields are located
++ Customer: represents the customers who book schedules
++ Place: represents each available court/field at each location
++ Payment: represents the accepted payment methods for each booking
++ Scheduling: represents each scheduled time booking for a specific court/field by a specific customer.
+
+## The serializers used are:
+
++ CompanySerializer: serializes/deserializes Company objects
++ CustomerSerializer: serializes/deserializes Customer objects
++ PlaceSerializer: serializes/deserializes Place objects
++ PaymentSerializer: serializes/deserializes Payment objects
++ SchedulingSerializer: serializes/deserializes Scheduling objects
++ HorariosClientesSerializer: serializes/deserializes scheduling times for specific customers
 
 
 
-Para executar a API, siga os seguintes passos:
+## To run the API, follow these steps:
 
-Instale as bibliotecas necessárias:
+## Install the VENV
+	py -m venv env
+	
+## Activate venv for windows
+	.\env\Scripts\activate
 
-Copy code
+## Install the required libraries:
 	pip install -r requirements.txt
-Execute as migrações do banco de dados:
 
-
+## Run the database migrations:
 	python manage.py migrate
-Inicie o servidor:
-
+	python manage.py makemigrations
+	
+## Start server:
 	python manage.py runserver
 
 
