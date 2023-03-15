@@ -1,4 +1,4 @@
-<h1>API de Agenda</h1>
+<h1>API de Agenda volei horários</h1>
 
 Status: Developing ⚠️
 
@@ -81,8 +81,6 @@ For each resource, the API supports CRUD operations (Create, Read, Update, and D
 ## Start server:
 	python manage.py runserver
 
-
-Informações adicionais:
 
 Versão da API: 1.0.0
 Autor: [Henrique Santos]
